@@ -52,15 +52,6 @@
         </div>
     </div>
 
-    <!-- Modal 4: Create Stat Block Form -->
-    <div id="statblock-form-modal" class="modal" style="display: none;">
-        <div class="modal-content modal-xlarge">
-            <span class="close" onclick="closeStatblockForm()">&times;</span>
-            <div id="form-container">
-                <!-- Form will be loaded here -->
-            </div>
-        </div>
-
 
     <!-- Modal 1: Audio Menu -->
     </div>
@@ -86,11 +77,157 @@
         </div>
     </div>
 
+    <!-- Modal 4: Create Stat Block Form -->
+    <div id="statblock-form-modal" class="modal" style="display: none;">
+    <div class="modal-content modal-xlarge">
+        <span class="close" onclick="closeStatblockForm()">&times;</span>
+        <link rel="stylesheet" href="/css/statblock_form.css">
+        <form id="statblock-form">
+            <div class="statblock-card rounded overflow-hidden shadow-lg">
+                <div class="char_img">
+                    <input type="hidden" id="image-data-output" name="image_base64">
+                    <label for="char-image-input" class="btn btn-primary mb-3">
+                        Click to Upload Character Image
+                    </label>
+                    <input type="file" id="char-image-input" style="display: none;" accept="image/*">
+                </div>
+                <div class="char_detz">
+                    <div class="Name">
+                        <label for="char-name" class="form-label ">Character Name</label>
+                        <input type="text" id="char-name" name="char_name">
+                    </div><hr size="5">
+                    <div class="species">
+                        <label for="char-size" class="form-label" style="color:black;">Size</label>
+                        <select id="char-size" name="char-size" class="form-select w-25" required>
+                            <option value="" disabled selected>Size</option>
+                            <option value="tiny">Tiny</option>
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                            <option value="huge">Huge</option>
+                            <option value="gargantuan">Gargantuan</option>
+                        </select>
+                        <label for="char-race" class="form-label" style="color:black;">Race</label>
+                        <select id="char-race" name="char-race" class="form-select w-25" required>
+                            <option value="" disabled selected>Race</option>
+                            <option value="aberration">Aberration</option>
+                            <option value="beast">Beast</option>
+                            <option value="celestial">Celestial</option>
+                            <option value="construct">Construct</option>
+                            <option value="dragon">Dragon</option>
+                            <option value="elemental">Elemental</option>
+                            <option value="fey">Fey</option>
+                            <option value="giant">Giant</option>
+                            <option value="humanoid">Humanoid</option>
+                            <option value="monstrosity">Monstrosity</option>
+                            <option value="ooze">Ooze</option>
+                            <option value="plant">Plant</option>
+                            <option value="undead">Undead</option>
+                        </select>
+                    </div><hr size="5">
+                    <div class="rating">
+                        <label for="armor-class" class="form-label"style="color:black;">Armor Class</label>
+                        <input type="number" id="armor-class" name="armor-class">
+                        <label for="hit-points" class="form-label"style="color:black;">Hit Points</label>
+                        <input type="number" id="hit-points" name="hit-points">
+                        <label for="speed" class="form-label"style="color:black;">Speed</label>
+                        <input type="number" id="speed" name="speed">
+                    </div><hr size="5">
+                    <div class="container">
+                        <div>
+                            <label for="str" class="form-label"style="color:black;">STR</label>
+                            <input type="number" id="str" name="str">
+                        </div>
+                        <div>
+                            <label for="dex" class="form-label"style="color:black;">DEX</label>
+                            <input type="number" id="dex" name="dex">
+                        </div>
+                        <div>
+                            <label for="con" class="form-label"style="color:black;">CON</label>
+                            <input type="number" id="con" name="con">
+                        </div>
+                        <div>
+                            <label for="int" class="form-label"style="color:black;">INT</label>
+                            <input type="number" id="int" name="int">
+                        </div>
+                        <div>
+                            <label for="wis" class="form-label"style="color:black;">WIS</label>
+                            <input type="number" id="wis" name="wis">
+                        </div>
+                        <div>
+                            <label for="cha" class="form-label"style="color:black;">CHA</label>
+                            <input type="number" id="cha" name="cha">
+                        </div>
+                    </div><hr size="5">
+                    <div class="metrics">
+                        <p style="color:black;">Press ctrl and click to select mulitple</p>
+                        <label for="skills" class="form-label"style="color:black;">Skills</label>
+                        <select id="skills" name="skills" class="form-select w-25" multiple size="8">
+                            <option value="" disabled selected>Skills</option>
+                            <option value="acrobatics">Acrobatics</option>
+                            <option value="animal-handling">Animal Handling</option>
+                            <option value="arcana">Arcana</option>
+                            <option value="athletics">Athletics</option>
+                            <option value="deception">Deception</option>
+                            <option value="history">History</option>
+                            <option value="insight">Insight</option>
+                            <option value="intimidation">Intimidation</option>
+                            <option value="investigation">Investigation</option>
+                            <option value="medicine">Medicine</option>
+                            <option value="nature">Nature</option>
+                            <option value="perception">Perception</option>
+                            <option value="religion">Religion</option>
+                            <option value="sleight-of-hand">Sleight of Hand</option>
+                            <option value="stealth">Stealth</option>
+                            <option value="survival">Survival</option>
+                        </select>
+                        <label for="languages" class="form-label"style="color:black;">Languages</label>
+                        <select id="languages" name="languages" class="form-select w-25" multiple size="8">
+                            <option value="" disabled selected>Languages</option>
+                            <option value="common">Common</option>
+                            <option value="dwarvish">Dwarvish</option>
+                            <option value="elvish">Elvish</option>
+                            <option value="giant">Giant</option>
+                            <option value="gnomish">Gnomish</option>
+                            <option value="goblin">Goblin</option>
+                            <option value="halfling">Halfling</option>
+                            <option value="orc">Orc</option>
+                            <option value="abyssal">Abyssal</option>
+                            <option value="celestial">Celestial</option>
+                            <option value="draconic">Draconic</option>
+                            <option value="deep-speech">Deep Speech</option>
+                            <option value="infernal">Infernal</option>
+                            <option value="primordial">Primordial</option>
+                            <option value="sylvan">Sylvan</option>
+                            <option value="undercommon">Undercommon</option>
+                            <option value="druidic">Druidic</option>
+                            <option value="thieves-cant">Thieves' Cant</option>
+                        </select>
+                        <label for="challenges" class="form-label"style="color:black;">Challenge Rating</label>
+                        <input type="text" id="challenges" name="challenges">
+                    </div><hr size="5">
+                    <div class="Traits"style="color:black;">
+                        <h5>Traits</h5>
+                        <textarea id="traits" class="form-control" rows="5"></textarea>
+                    </div><hr size="5">
+                    <div class="Actions"style="color:black;">
+                        <h5>Actions</h5>
+                        <textarea id="actions" class="form-control" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <button class="modal-btn" type="button" onclick="submitStatblockForm()">Save Stat Block</button>
+    </div>
+</div>
+
     <!--    jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="/js/statblock.js"></script>
 </head>
+
 <body>
     <h1>DnD Assistant</h1>
     <div class="content">
