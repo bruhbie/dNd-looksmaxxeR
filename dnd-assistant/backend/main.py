@@ -33,6 +33,7 @@ app.include_router(statblock.router, prefix="/api/statblock")
 app.mount("/css", StaticFiles(directory="frontend/css"), name="css")
 app.mount("/js", StaticFiles(directory="frontend/js"), name="js")
 app.mount("/img", StaticFiles(directory="frontend/img"), name="img")
+app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")
 
 
 # Override the default root route to serve index.html

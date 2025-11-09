@@ -141,7 +141,7 @@ async function showStatblockForm() {
     
     try {
         // Load the form HTML
-        const response = await fetch('/form.html');
+        const response = await fetch('frontend/form.html');
         const html = await response.text();
         
         // Extract just the form content (not the full HTML page)
