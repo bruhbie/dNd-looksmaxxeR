@@ -1,16 +1,20 @@
-.statblock {
+body {
     padding: 100px;
     margin-left: 150px;
     width: 70rem;
 }
+
 .char_img{
     padding-top: 2rem;
     text-align: center;
 }
 
+.btn{
+    color: white;
+}
 .statblock-card{
     background-image: radial-gradient(circle, #f8f2d6 65%, #a77c43);
-    height: 80rem;
+    height: 100rem;
 }
 
 .char_detz{
@@ -19,7 +23,7 @@
 
 .Name{
     font-family: "Grenze Gotisch", serif;
-    font-size: 5rem;
+    font-size: 2rem;
     font-style: normal;
     color: #7a0000;
 }
@@ -40,7 +44,7 @@ hr {
     font-family: "Atkinson Hyperlegible Mono", sans-serif;
 }
 .container div {
-    font-size: 20px;
+    font-size: 1.15rem;
     text-align: center;
 }
 
@@ -51,4 +55,18 @@ p{
 
 h5{
     font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+.rating{
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+    font-size: 0.9rem;
+}
+
+.metrics{
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+    font-size: 0.9rem;
+}
+
+#challenges{
+    margin: 1rem;
 }
