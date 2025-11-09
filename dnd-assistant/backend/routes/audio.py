@@ -57,11 +57,8 @@ def delete_button(snd):
     db.audio_buttons.delete_one({"name": snd.name})
 
 @router.get("/audio")
-def get_owned():
-    nomenes = []
-    for snd in db.get_buttons():
-        nomenes.append({"name": snd.name})
-    return nomenes
+def get_buttons():
+    return db.audio_buttons.find()
 
 FREESOUND_API_KEY = "eKPAn2CykoHlEAJH7XZgE66fUinbP70Ns4Nn5yE3"  # Get from freesound.org
 
