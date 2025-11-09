@@ -1,8 +1,8 @@
 import pymongo
 import base64
-from fastapi import APIRouter
+# from fastapi import APIRouter
 
-router = APIRouter()
+# router = APIRouter()
 
 dnd_client = pymongo.MongoClient("mongodb+srv://mrnagrat_db_user:blueFUHSHUHd00d@dndatabase.hduyis6.mongodb.net/?appName=dndatabase")
 
@@ -24,7 +24,7 @@ def retrieve_mp3(q_name):
     with open("dnd-assistant/sounds/"+q_name+".mp3", "wb") as f:
         f.write(free["file"])
 
-@router.get("/audio")
+# @router.get("/audio")
 def get_buttons():
     return audio_buttons.find()
 

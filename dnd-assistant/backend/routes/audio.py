@@ -12,6 +12,7 @@ import db
 
 client = freesound.FreesoundClient()
 client.set_token("eKPAn2CykoHlEAJH7XZgE66fUinbP70Ns4Nn5yE3","token")
+router = APIRouter()
 
 def search(word):
     candidates = client.text_search(query=word, page_size="10", fields="id,name,previews,url")
@@ -54,6 +55,10 @@ def delete_preview(snd):
 
 def delete_button(snd):
     db.audio_buttons.delete_one({"name": snd.name})
+
+@router.get("/audio")
+def get_owned():
+    return db.get_buttons()
 
 
 
