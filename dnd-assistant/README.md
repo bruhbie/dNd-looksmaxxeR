@@ -1,4 +1,4 @@
-# TTRPG Assistant
+# Dungeons & Dragons (D&D) Assistant
 
 A Clarkathon 2025 project by Barbie, Clay, and Michael! 
 
